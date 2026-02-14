@@ -52,16 +52,16 @@ const inmoviliary = {
 
   // Propiedades básicas (adapta a tu dominio)
    name: 'inmoviliary Col',
-   description: 'inmovialaria de compra/venta de propiedades',
+   bio: 'inmovialaria de compra/venta de propiedades',
    identifier: 'UZUMYMW', // código, id, número, etc.
 
   // Propiedad de contacto o ubicación (si aplica)
-   //contact: {
+   contact: {
+     phone: '3118471307',
      email: 'soporteinmoviliarycol@outlook.com',
-  //   phone: '',
      location: 'BogotaDC ',
-     avatar: 'https://tayronainmobiliaria.com/wp-content/uploads/2025/01/que-esperarar-tendencias-inmobiliaria-en-colombia-2025-1024x640.jpg'
-   //},
+     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWbQJGvPTizFbEEapYgRTxlhiHqLoSGpNLw&s'
+   },
 
   // Array de elementos relacionados (adapta a tu dominio)
   // Ejemplos: skills, ingredients, services, features, amenities
@@ -76,12 +76,12 @@ const inmoviliary = {
   // ],
 
   // Estadísticas o contadores (adapta a tu dominio)
-  // stats: {
-  //   total: 0,
-  //   active: 0,
-  //   rating: 0,
-  //   custom: 0  // renombra según tu dominio
-  // }
+    stats: {
+     total: 0,
+     active: 0,
+     rating: 0,
+     custom: 0  // renombra según tu dominio
+   }
 };
 
 // ============================================
