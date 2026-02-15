@@ -63,6 +63,7 @@ const inmoviliary = {
      phone: '3118471307',
      email: 'soporteinmoviliarycol@outlook.com',
      location: 'Bogota DC',
+
    },
 
   // Array de elementos relacionados (adapta a tu dominio)
