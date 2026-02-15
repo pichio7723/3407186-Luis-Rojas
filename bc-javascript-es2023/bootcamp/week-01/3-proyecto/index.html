@@ -39,6 +39,22 @@
         titleElement.textContent = `${inmoviliary.name}`;
         avatarElement.src = inmoviliary.avatar;
         Location.textContent =  `${inmoviliary.contact.location}`;
+        
+        //boton para cambiar el tema
+        const themeBtn = document.getElementById("themeToggle");
+  const themeIcon = themeBtn.querySelector(".theme-icon");
+
+  themeBtn.addEventListener("click", () => {
+    // Si ya está en modo oscuro, quitarlo
+    if (document.body.getAttribute("data-theme") === "dark") {
+      document.body.removeAttribute("data-theme");
+      themeIcon.textContent = "🌙"; // Luna para modo claro
+    } else {
+      // Activar modo oscuro
+      document.body.setAttribute("data-theme", "dark");
+      themeIcon.textContent = "☀️"; // Sol para modo oscuro
+    }
+  });
       </script>
 
       <!-- Bio Section -->
@@ -123,6 +139,8 @@
      hability.textContent = `${inmoviliary.skills}`;
      social.textContent = inmoviliary.links;
 
+
+     //boton para ver los demas skills
   const skillsList = document.getElementById("skillsList");
   const toggleBtn = document.getElementById("toggleSkills");
 
@@ -159,6 +177,26 @@
     showing = !showing;
     renderHabilidades();
   });
+
+
+  //boton para copiar el email
+  const copyBtn = document.getElementById("copyEmailBtn");
+const emailElement = document.getElementById("userEmail");
+
+copyBtn.addEventListener("click", () => {
+  // Tomar el texto del email
+  const emailText = emailElement.textContent;
+
+  // Copiar al portapapeles
+  navigator.clipboard.writeText(emailText).then(() => {
+    // Mostrar un aviso (puedes usar tu toast)
+    alert("Email copiado al portapapeles: " + emailText);
+  }).catch(err => {
+    console.error("Error al copiar: ", err);
+  });
+});
+
+
 
 
   </script>
