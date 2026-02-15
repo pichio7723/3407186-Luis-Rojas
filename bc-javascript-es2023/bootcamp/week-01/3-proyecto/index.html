@@ -22,8 +22,8 @@
         </div>
         <div class="header-info">
           <h1 id="userName"></h1>
-          <p class="title" id="userTitle">Loading...</p>
-          <p class="location" id="userLocation">📍 Loading...</p>
+          <p class="title" id="userTitle">BogotaDC</p>
+          <p class="location" id="userLocation">📍 BogotaDC</p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
         nameElement.textContent = inmoviliary.name;
         titleElement.textContent = `${inmoviliary.name}`;
         avatarElement.src = inmoviliary.avatar;
-        Location.textContent =  `${inmoviliary.location}`;
+        Location.textContent =  `${inmoviliary.contact.location}`;
       </script>
 
       <!-- Bio Section -->
@@ -69,6 +69,7 @@
         <div id="skillsList" class="skills-list">
           Loading...
         </div>
+        <button id="toggleSkills" class="btn btn-secondary">Mostrar más</button>
       </div>
 
       <!-- Social Media Section -->
@@ -122,8 +123,44 @@
      hability.textContent = `${inmoviliary.skills}`;
      social.textContent = inmoviliary.links;
 
+  const skillsList = document.getElementById("skillsList");
+  const toggleBtn = document.getElementById("toggleSkills");
 
-     
+  let showing = false;
+
+  function renderHabilidades() {
+    skillsList.innerHTML = ""; // limpiar contenido
+
+    if (showing) {
+      // Mostrar todas las habilidades
+      inmoviliary.habilidades.forEach(hab => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <a href="${hab.url}" target="_blank">
+            <img src="${hab.icon}" alt="${hab.platform}" width="30">
+            ${hab.platform}
+          </a>
+        `;
+        skillsList.appendChild(div);
+      });
+      toggleBtn.textContent = "Ocultar habilidades";
+    } else {
+      // Ocultar (volver a "Loading...")
+      skillsList.textContent = inmoviliary.skills;
+      toggleBtn.textContent = "Mostrar habilidades";
+    }
+  }
+
+  // Inicializar en estado oculto
+  renderHabilidades();
+
+  // Evento del botón
+  toggleBtn.addEventListener("click", () => {
+    showing = !showing;
+    renderHabilidades();
+  });
+
+
   </script>
 </body>
 </html>

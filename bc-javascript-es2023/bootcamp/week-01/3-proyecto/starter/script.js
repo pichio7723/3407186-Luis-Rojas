@@ -63,7 +63,6 @@ const inmoviliary = {
      phone: '3118471307',
      email: 'soporteinmoviliarycol@outlook.com',
      location: 'Bogota DC',
-
    },
 
   // Array de elementos relacionados (adapta a tu dominio)
@@ -74,9 +73,9 @@ const inmoviliary = {
    //],
 
   // Array de enlaces o referencias (si aplica)
-  // links: [
-  //   { platform: '', url: '', icon: '' }
-  // ],
+   habilidades: [
+     { platform: 'instagram', url: 'https://www.instagram.com/inversionesinmobiliariascol/', icon: 'https://1000marcas.net/wp-content/uploads/2019/11/Instagram-Logosu.png' }
+   ],
 
   // Estadísticas o contadores (adapta a tu dominio)
     stats: {
