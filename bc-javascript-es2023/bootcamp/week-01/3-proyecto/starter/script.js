@@ -52,7 +52,7 @@ const inmoviliary = {
 
   // Propiedades básicas (adapta a tu dominio)
    name: 'inmoviliary Col',
-   bio: 'inmovialaria de compra/venta de propiedades',
+   bio: 'inmoviliaria de compra/venta de propiedades',
    identifier: 'UZUMYMW', // código, id, número, etc.
    skills: 'vender y comprar',
    avatar: 'https://mir-s3-cdn-cf.behance.net/projects/404/55568a56036041.Y3JvcCwxMTU3LDkwNSw2MCww.jpg',
