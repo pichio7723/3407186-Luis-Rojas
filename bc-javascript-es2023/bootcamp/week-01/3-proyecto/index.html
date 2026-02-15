@@ -18,7 +18,7 @@
       <!-- Header Section -->
       <div class="card-header">
         <div class="avatar">
-          <img src="https://via.placeholder.com/150" alt="Profile Avatar" id="avatarImg">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/55568a56036041.Y3JvcCwxMTU3LDkwNSw2MCww.jpg" alt="Profile Avatar" id="avatarImg">
         </div>
         <div class="header-info">
           <h1 id="userName"></h1>
@@ -32,13 +32,13 @@
       <script>
         const nameElement = document.getElementById("userName");
         const titleElement = document.getElementById("userTitle");
-        const avatarElement = document.getElementById("avatarImg")
-        const Location = document.getElementById("userLocation")
+        const avatarElement = document.getElementById("avatarImg");
+        const Location = document.getElementById("userLocation");
 
         nameElement.textContent = inmoviliary.name;
-        titleElement.textContent = `Nombre = ${inmoviliary.name}`;
+        titleElement.textContent = `${inmoviliary.name}`;
         avatarElement.src = inmoviliary.avatar;
-        Location.textContent =  `location = ${inmoviliary.location}`;
+        Location.textContent =  `${inmoviliary.location}`;
       </script>
 
       <!-- Bio Section -->
@@ -69,7 +69,6 @@
         <div id="skillsList" class="skills-list">
           Loading...
         </div>
-        <button id="toggleSkills" class="btn btn-secondary">Show More</button>
       </div>
 
       <!-- Social Media Section -->
@@ -103,7 +102,27 @@
 
   <script src="starter/script.js"></script>
   <script>
+    //definicion de variables constantes tomando ids de elementos
     const about = document.getElementById("userBio")
+    const stadistic = document.getElementById("stats")
+    const userEmail = document.getElementById("userEmail")
+    const userPhone = document.getElementById("userPhone")
+    const hability = document.getElementById("skillsList")
+    const stats = `Total: ${inmoviliary.stats.total}, Active: ${inmoviliary.stats.active}, Rating: ${inmoviliary.stats.rating}`;
+    const Email = `Email: ${inmoviliary.contact.email}`;
+    const Phone = `Phone: ${inmoviliary.contact.phone}`;
+    const social = document.getElementById("socialLinks")
+    
+
+    //muestra de informacion en la web
+     about.textContent = `${inmoviliary.bio}`;
+     stadistic.textContent = stats;
+     userEmail.textContent = Email;
+     userPhone.textContent = Phone;
+     hability.textContent = `${inmoviliary.skills}`;
+     social.textContent = inmoviliary.links;
+
+     
   </script>
 </body>
 </html>

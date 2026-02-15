@@ -2,11 +2,11 @@
    CSS Variables for Theming
    ============================================ */
 :root {
-  --bg-primary: #125b26;
-  --bg-secondary: #188c2d;
+  --bg-primary: #810c0c;
+  --bg-secondary: #c40808;
   --text-primary: #ffffff;
   --text-secondary: #ffffff;
-  --accent: #0a8d20;
+  --accent: #8d0a0a;
   --accent-hover: #0ebd5c;
   --border: #e2e8f0;
   --shadow: rgba(0, 0, 0, 0.1);
