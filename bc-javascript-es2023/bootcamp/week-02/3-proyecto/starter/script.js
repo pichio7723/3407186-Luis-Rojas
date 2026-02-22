@@ -55,9 +55,9 @@ let editingItemId = null;
 
 const CATEGORIES = {
   // TODO: Define las categorías de tu dominio
-  // category1: { name: 'Nombre en español', emoji: '🔹' },
-  // category2: { name: 'Nombre en español', emoji: '🔸' },
-  // category3: { name: 'Nombre en español', emoji: '🔷' },
+   Venta: { name: 'Vender propiedad', emoji: '🔹' },
+   Compra: { name: 'Comprar propiedad', emoji: '🔸' },
+   Oferta: { name: 'ofrecer casa', emoji: '🔷' },
 };
 
 // Prioridades genéricas (adapta los nombres si es necesario)
@@ -83,8 +83,8 @@ const loadItems = () => {
   // 4. Usa el operador ?? para el valor por defecto
   //
   // EJEMPLO:
-  // const stored = localStorage.getItem('celestialBodies');
-  // return stored ? JSON.parse(stored) : [];
+   const stored = localStorage.getItem('inmoviliary');
+   return stored ? JSON.parse(stored) : [];
   // O más moderno:
   // return JSON.parse(localStorage.getItem('celestialBodies') ?? '[]');
 };
@@ -99,7 +99,7 @@ const saveItems = itemsToSave => {
   // 2. Guarda con localStorage.setItem()
   //
   // EJEMPLO:
-  // localStorage.setItem('celestialBodies', JSON.stringify(itemsToSave));
+   localStorage.setItem('inmoviliary', JSON.stringify(itemsToSave));
 };
 
 // ============================================
@@ -130,23 +130,23 @@ const createItem = (itemData = {}) => {
   // 5. Retorna el nuevo array
   //
   // EJEMPLO (Planetario):
-  // const newItem = {
-  //   id: Date.now(),
-  //   name: itemData.name ?? '',
-  //   description: itemData.description ?? '',
-  //   category: itemData.category ?? 'planet',
-  //   priority: itemData.priority ?? 'medium',
-  //   active: true,
-  //   createdAt: new Date().toISOString(),
-  //   updatedAt: null,
-  //   // Propiedades específicas del dominio:
-  //   magnitude: itemData.magnitude ?? 0,
-  //   distance: itemData.distance ?? '',
-  //   ...itemData
-  // };
-  // const newItems = [...items, newItem];
-  // saveItems(newItems);
-  // return newItems;
+   const newItem = {
+     id: Date.now(),
+     name: itemData.name ?? 'Casa en usme con balcon',
+     description: itemData.description ?? '',
+     category: itemData.category ?? 'Oferta',
+     priority: itemData.priority ?? 'medium',
+     active: true,
+     createdAt: new Date().toISOString(),
+     updatedAt: null,
+     // Propiedades específicas del dominio:
+     magnitude: itemData.magnitude ?? 0,
+     distance: itemData.distance ?? '',
+     ...itemData
+   };
+   const newItems = [...items, newItem];
+   saveItems(newItems);
+   return newItems;
 };
 
 // ============================================
@@ -166,7 +166,16 @@ const updateItem = (id, updates) => {
   // 3. Si no coincide, retorna el item sin cambios
   // 4. Guarda el nuevo array en localStorage
   // 5. Retorna el nuevo array
-  //
+ const updateItem = (id, updates) => {
+  const updatedItems = items.map(item =>
+    item.id === id
+      ? { ...item, ...updates, updatedAt: new Date().toISOString() }
+      : item
+  );
+
+  saveItems(updatedItems);
+  return updatedItems;
+};
   // EJEMPLO:
   // const updatedItems = items.map(item =>
   //   item.id === id
